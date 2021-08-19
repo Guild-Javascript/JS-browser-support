@@ -19,7 +19,14 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { targets: "defaults" }]
+              [
+                '@babel/preset-env', 
+                // if wanting to support unknown 3rd party packages that
+                // may or may not have polyfill support for older browsers
+                // can use option 'entry'
+                // and see comments in app.js
+                { useBuiltIns: 'usage', corejs: { version: 3 } }
+              ]
             ]
           }
         }

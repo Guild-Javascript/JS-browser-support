@@ -3,7 +3,8 @@
 
 ### babel transpiling, 
 ### feature detection (if checks in app.js) for browser support,
-### (soon to come: polyfills ** yes todo!)
+### polyfills: [ '@babel/preset-env', { useBuiltIns: 'usage', corejs: { version: 3 } }] in webpack.config.js automatically adds polyfills based on their usage
+ - This can be seen by commenting out the use of promises in app.js and noticing the size difference in the app.js bundle output file
 
 # Running Project
 ### Run command: npm install
